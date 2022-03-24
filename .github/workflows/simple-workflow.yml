@@ -15,14 +15,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "build" We can change the name of this job to better suite what it is doing
   build:
-    # The type of runner that the job will run on
+    # The type of runner that the job will run on. Any machine that with the Githubs Action Runner application installed. Can be run on Github Runners or self-hosted runners
+    #https://help.github.com/en/actionms/hosting-your-own-runners/about-self-hosted-runners documentation on setting up self hosted runners
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps represent a sequence of tasks that will be executed as part of the job. All will be run on the same runner, so they can share info
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it. Standard action that is being used. Checkoiut must be done before other steps
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
